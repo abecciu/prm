@@ -46,7 +46,7 @@ module Debian
         arch.each { |a|
           Dir.glob(directory + "/*.deb") do |file|
             if file =~ /^.*#{a}.*\.deb$/i
-              FileUtils.mv(file, "#{path}/dists/#{r}/#{c}/binary-#{a}/")
+              FileUtils.cp(file, "#{path}/dists/#{r}/#{c}/binary-#{a}/")
             end
           end
         }
